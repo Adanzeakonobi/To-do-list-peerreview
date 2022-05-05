@@ -11,6 +11,7 @@ This project was built using a simple simple webpack
 - JavaScipt
 - ES6
 - Webpack
+- Jest
 
 ## Live Demo
 
@@ -21,6 +22,12 @@ This project was built using a simple simple webpack
 👤 **Adaobi Okoye**
 
 - GitHub: (https://github.com/Adanzeakonobi/To-do-list.git)
+
+## Author
+
+👤 **Amedzro Emmanuel Elikplim**
+
+- GitHub: (https://github.com/Amedzro-Elikplim)
 
 
 ## Getting Started
