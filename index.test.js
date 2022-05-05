@@ -1,12 +1,39 @@
 const { createList } = require('./src/addrem.js');
+const { removeLocal } = require('./src/check.js');
 
-const getFromLocalStorage = () => JSON.parse(localStorage.getItem('task.list'));
-
-describe('addItem', () => {
+describe('addItem and remove item from localStorage', () => {
   test('addItem to localStorage', () => {
-    const result = getFromLocalStorage();
-    const data = result[result.length - 1];
+    const task = 'Read a book';
+    const result = createList(task);
+    const data = JSON.parse(localStorage.getItem('task.list')) || [];
 
-    expect(createList('Read book')).toEqual(data);
+    const expectedResult = {
+      index: data.length + 1,
+      description: task,
+      completed: false,
+    };
+
+    expect(result).toEqual(expectedResult);
+  });
+
+  test('remove item from localStorage', () => {
+    const dump = [
+      {
+        index: 1,
+        description: 'hello',
+        completed: false,
+      },
+      {
+        index: 2,
+        description: 'world',
+        completed: false,
+      },
+      {
+        index: 3,
+        description: 'come',
+        completed: false,
+      },
+    ];
+    const todoList = JSON.parse(localStorage.getItem('task.list')) || [];
   });
 });
