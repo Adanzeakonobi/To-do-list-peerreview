@@ -81,7 +81,6 @@ const saveAndRender = () => {
 newList.addEventListener('submit', (e) => {
   e.preventDefault();
   const listName = newBar.value;
-  if (listName == null || listName === '') return;
   const list = createList(listName);
   newBar.value = null;
   todoList.push(list);
