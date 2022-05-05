@@ -22,6 +22,12 @@ This project was built using a simple simple webpack
 
 - GitHub: (https://github.com/Adanzeakonobi/To-do-list.git)
 
+## Author
+
+👤 **Amedzro Emmanuel Elikplim**
+
+- GitHub: (https://github.com/Amedzro-Elikplim)
+
 
 ## Getting Started
 
