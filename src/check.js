@@ -13,13 +13,20 @@ const status = (checkbox, task) => {
   }
 };
 
+const removeFromLocalStorage = (index, storage) => {
+  const removedItem = storage.splice(index, 1);
+
+  return removedItem;
+};
+
 const removeLocal = (todo) => {
   const todoIndex = todo.children[0].children[1].value;
-  todoList.splice(todoList.indexOf(todoIndex), 1);
+  const index = todoList.indexOf(todoIndex);
+  removeFromLocalStorage(index, todoList);
   save();
-  window.location.reload();
+  // window.location.reload();
 };
 
 module.exports = {
-  status, todoList, LIST_KEY, removeLocal, save,
+  status, todoList, LIST_KEY, removeLocal, save, removeFromLocalStorage,
 };
