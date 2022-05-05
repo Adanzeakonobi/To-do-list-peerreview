@@ -11,6 +11,7 @@ This project was built using a simple simple webpack
 - JavaScipt
 - ES6
 - Webpack
+- Jest
 
 ## Live Demo
 
