@@ -2,7 +2,7 @@ const { todoList, removeLocal, save } = require('./check.js');
 
 const createList = (task) => (
   {
-    index: todoList.length,
+    index: todoList.length + 1,
     description: task,
     completed: false,
   });
