@@ -20,6 +20,6 @@ const removeLocal = (todo) => {
   window.location.reload();
 };
 
-export {
+module.exports = {
   status, todoList, LIST_KEY, removeLocal, save,
 };

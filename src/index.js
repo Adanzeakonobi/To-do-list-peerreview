@@ -1,8 +1,7 @@
-// eslint-disable-next-line no-unused-vars
-import _ from 'lodash';
 import './style.css';
-import { status, todoList, save } from './check.js';
-import { createList, deleteList, deleteAllDone } from './addrem.js';
+
+const { status, todoList, save } = require('./check.js');
+const { createList, deleteList, deleteAllDone } = require('./addrem.js');
 
 const container = document.querySelector('.list-container');
 const newList = document.querySelector('.form');
