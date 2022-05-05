@@ -1,5 +1,9 @@
 const { createList } = require('./src/addrem.js');
-const { removeLocal } = require('./src/check.js');
+const { removeFromLocalStorage } = require('./src/check.js');
+
+beforeEach(() => {
+  localStorage.setItem('task.list', JSON.stringify([]));
+});
 
 describe('addItem and remove item from localStorage', () => {
   test('addItem to localStorage', () => {
@@ -34,6 +38,15 @@ describe('addItem and remove item from localStorage', () => {
         completed: false,
       },
     ];
-    const todoList = JSON.parse(localStorage.getItem('task.list')) || [];
+
+    localStorage.setItem('task.list', JSON.stringify(dump));
+    const result = [{
+      index: 1,
+      description: 'hello',
+      completed: false,
+    }];
+
+    const storage = JSON.parse(localStorage.getItem('task.list'));
+    expect(removeFromLocalStorage(0, storage)).toEqual(result);
   });
 });
