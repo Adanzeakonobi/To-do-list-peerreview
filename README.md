@@ -8,8 +8,8 @@ Add and delete item from storage, editing and clear completed functions were tes
 
 ## Built With
 
-- HTML
-- CSS
+- HTML 5
+- CSS 3
 - JavaScipt
 - ES6
 - Webpack
