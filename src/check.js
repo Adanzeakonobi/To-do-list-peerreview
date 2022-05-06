@@ -5,6 +5,10 @@ const save = () => {
   localStorage.setItem(LIST_KEY, JSON.stringify(todoList));
 };
 
+const clear = (element) => {
+  while (element.firstChild) element.removeChild(element.firstChild);
+};
+
 const status = (checkbox, task) => {
   if (checkbox.checked) {
     task.completed = true;
@@ -28,5 +32,5 @@ const removeLocal = (todo) => {
 };
 
 module.exports = {
-  status, todoList, LIST_KEY, removeLocal, save, removeFromLocalStorage,
+  status, todoList, clear, LIST_KEY, removeLocal, save, removeFromLocalStorage,
 };
