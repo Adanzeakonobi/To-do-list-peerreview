@@ -1,13 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # To Do List
-This project was built using a simple simple webpack
+This project was built using a simple simple webpack. 
+Add and delete item from storage, editing and clear completed functions were tested in this project.
+
 ![screenshot](./src/output.PNG)
 
 ## Built With
 
-- HTML
-- CSS
+- HTML 5
+- CSS 3
 - JavaScipt
 - ES6
 - Webpack

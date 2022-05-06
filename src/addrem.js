@@ -17,13 +17,18 @@ const deleteList = (e) => {
   }
 };
 
-const deleteAllDone = () => {
-  const completed = document.querySelectorAll('.check');
+const removeCompletedFromUI = (completed) => {
   completed.forEach((checkbox) => {
     if (checkbox.checked) {
       checkbox.parentElement.parentElement.remove();
     }
   });
+  return completed.length - 1;
+};
+
+const deleteAllDone = () => {
+  const completed = document.querySelectorAll('.check');
+  removeCompletedFromUI(completed);
   for (let i = 0; i < todoList.length; i += 1) {
     // eslint-disable-next-line array-callback-return
     todoList.filter((task) => {
@@ -47,4 +52,5 @@ module.exports = {
   createList,
   deleteList,
   deleteAllDone,
+  removeCompletedFromUI,
 };
