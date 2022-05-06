@@ -15,6 +15,8 @@ const status = (checkbox, task) => {
   } else {
     task.completed = false;
   }
+
+  return task.completed;
 };
 
 const removeFromLocalStorage = (index, storage) => {
@@ -28,7 +30,7 @@ const removeLocal = (todo) => {
   const index = todoList.indexOf(todoIndex);
   removeFromLocalStorage(index, todoList);
   save();
-  // window.location.reload();
+  window.location.reload();
 };
 
 module.exports = {
