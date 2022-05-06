@@ -1,5 +1,5 @@
-const { createList } = require('./src/addrem.js');
-const { removeFromLocalStorage, clear } = require('./src/check.js');
+const { createList, removeCompletedFromUI } = require('./src/addrem.js');
+const { removeFromLocalStorage, clear, status } = require('./src/check.js');
 
 beforeEach(() => {
   localStorage.setItem('task.list', JSON.stringify([]));
@@ -51,15 +51,51 @@ describe('addItem and remove item from localStorage', () => {
   });
 });
 
-describe('editing, updating and clear completed task', () => {
-  const ul = document.createElement('ul');
-  ul.className = 'list-container';
-  ul.innerHTML = `
-      <li> Go to work </li>
-      <li> Buy groceries </li>
-    `;
-
+describe('editing, toggle status and clear completed task', () => {
   test('remove all task from list', () => {
+    const ul = document.createElement('ul');
+    ul.className = 'list-container';
+    ul.innerHTML = `
+        <li> Go to work </li>
+        <li> Buy groceries </li>
+      `;
     expect(clear(ul)).toBe(undefined);
+  });
+
+  test('toggle status of task', () => {
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.checked = true;
+
+    const data = {
+      index: 1,
+      description: 'hello',
+      completed: false,
+    };
+
+    expect(status(input, data)).toBe(true);
+  });
+
+  test('remove one completed task from UI', () => {
+    const div = document.createElement('div');
+    div.innerHTML = `
+      <ul>
+        <div>
+          <li>
+           <input type='checkbox' class="check" checked />
+          </li>
+        </div>
+        
+        <div>
+          <li>
+           <input type="checkbox" class="check"/>
+          </li>
+        </div>
+      </ul>
+    `;
+    document.body.appendChild(div);
+    const temp = document.querySelectorAll('.check');
+
+    expect(removeCompletedFromUI(temp)).toEqual(1);
   });
 });
