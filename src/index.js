@@ -1,6 +1,8 @@
 import './style.css';
 
-const { status, todoList, save } = require('./check.js');
+const {
+  status, todoList, save, clear,
+} = require('./check.js');
 const { createList, deleteList, deleteAllDone } = require('./addrem.js');
 
 const container = document.querySelector('.list-container');
@@ -8,10 +10,6 @@ const newList = document.querySelector('.form');
 const newBar = document.querySelector('.add-bar');
 const refresh = document.querySelector('.fa-sync-alt');
 const clearCompleted = document.querySelector('.clear');
-
-const clear = (element) => {
-  while (element.firstChild) element.removeChild(element.firstChild);
-};
 
 const render = () => {
   clear(container);
